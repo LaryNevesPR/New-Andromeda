@@ -16,6 +16,8 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 using System.Numerics;
+using Content.Shared._Goobstation.Chemistry;
+using Content.Shared.Chemistry;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -47,10 +49,14 @@ namespace Content.Server.Chemistry.EntitySystems
             {
                 var solution = soln.Comp.Solution;
                 _reactive.DoEntityReaction(args.OtherEntity, solution, ReactionMethod.Touch);
+                var ev = new VaporCheckEyeProtectionEvent(); // Goobstation - Start
+                RaiseLocalEvent(args.OtherEntity, ev);
+                if (!ev.Protected)
+                    _reactive.DoEntityReaction(args.OtherEntity, solution, ReactionMethod.Eyes); // Goobstation - End
             }
 
             // Check for collision with a impassable object (e.g. wall) and stop
-            if ((args.OtherFixture.CollisionLayer & (int) CollisionGroup.Impassable) != 0 && args.OtherFixture.Hard)
+            if ((args.OtherFixture.CollisionLayer & (int)CollisionGroup.Impassable) != 0 && args.OtherFixture.Hard)
             {
                 EntityManager.QueueDeleteEntity(entity);
             }

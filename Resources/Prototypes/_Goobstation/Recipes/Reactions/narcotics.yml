@@ -1,0 +1,9 @@
+- type: reaction
+  id: OleoresinCapsaicin
+  reactants:
+    CapsaicinOil:
+      amount: 1
+    Acetone:
+      amount: 2
+  products:
+    OleoresinCapsaicin: 1

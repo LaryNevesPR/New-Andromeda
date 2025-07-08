@@ -75,14 +75,15 @@ public sealed class ReactiveSystem : EntitySystem
                 }
             }
         }
-
         // Then, check if the prototype has any effects it can apply as well.
         if (reactive.Reactions != null)
         {
             foreach (var entry in reactive.Reactions)
             {
                 if (!entry.Methods.Contains(method))
+                {
                     continue;
+                }
 
                 if (entry.Reagents != null && !entry.Reagents.Contains(proto.ID))
                     continue;
@@ -98,7 +99,6 @@ public sealed class ReactiveSystem : EntitySystem
                         _adminLogger.Add(LogType.ReagentEffect, effect.LogImpact,
                             $"Reactive effect {effect.GetType().Name:effect} of {ToPrettyString(entity):entity} using reagent {proto.ID:reagent} with method {method} at {Transform(entity).Coordinates:coordinates}");
                     }
-
                     effect.Effect(args);
                 }
             }
@@ -107,9 +107,10 @@ public sealed class ReactiveSystem : EntitySystem
 }
 public enum ReactionMethod
 {
-Touch,
-Injection,
-Ingestion,
+    Touch,
+    Injection,
+    Ingestion,
+    Eyes,
 }
 
 [ByRefEvent]

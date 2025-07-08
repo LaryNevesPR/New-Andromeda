@@ -1,3 +1,4 @@
+using Content.Shared._Goobstation.Chemistry;
 using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
@@ -23,6 +24,7 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Temperature;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Mobs;
 
 namespace Content.Shared.Inventory;
 
@@ -61,6 +63,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, GetEyeProtectionEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, GetBlurEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SolutionScanEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, VaporCheckEyeProtectionEvent>(RelayInventoryEvent);
 
         // ComponentActivatedClientSystems
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowJobIconsComponent>>(RefRelayInventoryEvent);
