@@ -169,7 +169,7 @@
 
 - type: loadoutGroup
   id: HeadSecurityArmas
-  name: loadout-group-armas
+  name: loadout-group-armas-hos
   minLimit: 1
   maxLimit: 1
   loadouts:
