@@ -408,6 +408,9 @@
     - HeadofSecurityOuterClothing
     - SecurityShoes
     - SurvivalSecurity
+    - HeadSecurityArmas # Andromeda
+    - SecurityArmas # Andromeda
+    - SecurityAllAmmo # Andromeda
     - Trinkets
     - SecurityStar
     - GroupSpeciesBreathToolSecurity
@@ -427,6 +430,8 @@
     - WardenOuterClothing
     - SecurityShoes
     - SurvivalSecurity
+    - SecurityArmas # Andromeda
+    - SecurityAllAmmo # Andromeda
     - Trinkets
     - SecurityStar
     - GroupSpeciesBreathToolSecurity
@@ -447,6 +452,8 @@
     - SecurityPDA
     - SecurityBelt
     - SurvivalSecurity
+    - SecurityArmas # Andromeda
+    - SecurityAllAmmo # Andromeda
     - Trinkets
     - SecurityStar
     - GroupSpeciesBreathToolSecurity
@@ -465,6 +472,8 @@
     - DetectiveOuterClothing
     - SecurityShoes
     - SurvivalSecurity
+    - SecurityArmas # Andromeda
+    - SecurityAllAmmo # Andromeda
     - Trinkets
     - SecurityStar
     - GroupSpeciesBreathToolSecurity
